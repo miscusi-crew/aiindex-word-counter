@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word Counter</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="base.css">
+<style>
+  main{max-width:52rem}
+  textarea{width:100%;min-height:16rem;line-height:1.6;resize:vertical;margin:.75rem 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:.5rem}
+  .grid div{border:1px solid var(--line);border-radius:.6rem;padding:.6rem .75rem;background:var(--card)}
+  .grid b{display:block;font-size:1.5rem;font-variant-numeric:tabular-nums}
+  .grid span{color:var(--muted);font-size:.85rem}
+  h2{font-size:1rem;margin:1.25rem 0 .4rem}
+  ol{margin:0;padding-left:1.25rem;columns:2;color:var(--muted)}
+  ol b{color:var(--fg)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Word Counter</h1>
+  <p class="sub">Type or paste text. It's kept in this browser.</p>
+  <label class="sr-only" for="text">Text</label>
+  <textarea id="text" placeholder="Start typing…"></textarea>
+  <div class="grid" aria-live="polite">
+    <div><b id="words">0</b><span>Words</span></div>
+    <div><b id="chars">0</b><span>Characters</span></div>
+    <div><b id="nospace">0</b><span>Without spaces</span></div>
+    <div><b id="sentences">0</b><span>Sentences</span></div>
+    <div><b id="paras">0</b><span>Paragraphs</span></div>
+    <div><b id="read">0 min</b><span>Reading time</span></div>
+    <div><b id="speak">0 min</b><span>Speaking time</span></div>
+  </div>
+  <h2>Most used words</h2>
+  <ol id="top"></ol>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
